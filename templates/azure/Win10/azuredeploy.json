@@ -506,6 +506,11 @@
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[parameters('adminPassword')]"
                 },
+                "priority": "Spot",
+                "evictionPolicy": "Deallocate",
+                "billingProfile": {
+                  "maxPrice": -1
+                },
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "[variables('allWinWKS')[copyIndex('vmVMCopy')].publisher]",
