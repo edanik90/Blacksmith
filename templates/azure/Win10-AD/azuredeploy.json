@@ -163,7 +163,8 @@
                 "Standard_B8ms",
                 "Standard_A2_v2",
                 "Standard_A4_v2",
-                "Standard_A8_v2"
+                "Standard_A8_v2",
+                "Standard_D2s_v3"
             ],
             "metadata": {
                 "description": "Size of the virtual machine. Reference: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-general"
@@ -684,6 +685,11 @@
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "[variables('domainController')[0].vmSize]"
+                },
+                "priority": "Spot",
+                "evictionPolicy": "Deallocate",
+                "billingProfile": {
+                  "maxPrice": -1
                 },
                 "osProfile": {
                     "computerName": "[variables('domainController')[0].vmName]",
