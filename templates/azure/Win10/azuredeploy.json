@@ -503,7 +503,7 @@
                 },                
                 "priority": "Spot",
                 "evictionPolicy": "Deallocate",
-                "billingProfile": { "maxPrice": -1 }
+                "billingProfile": { "maxPrice": -1 },
                 "osProfile": {
                     "computerName": "[variables('allWinWKS')[copyIndex('vmVMCopy')].vmName]",
                     "adminUsername": "[parameters('adminUsername')]",
